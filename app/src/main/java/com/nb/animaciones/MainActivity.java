@@ -1,28 +1,35 @@
 package com.nb.animaciones;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvInfo;
+    private ImageView ivCheck;
+    private AnimationDrawable animationDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvInfo = findViewById(R.id.tvInfo);
-    }
+        ivCheck = findViewById(R.id.ivCheck);
+        // Establece animacion creada
+        ivCheck.setBackgroundResource(R.drawable.animation_check);
 
-    public void cambiarVisibilidad(View view) {
-        if (tvInfo.getVisibility() == View.VISIBLE) {
-            tvInfo.setVisibility(View.GONE);
-        } else {
-            tvInfo.setVisibility(View.VISIBLE);
-        }
+        //Obtiene animacion
+        animationDrawable = (AnimationDrawable) ivCheck.getBackground();
+
+        ivCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Inicia nuevamente la animacion
+                animationDrawable.start();
+            }
+        });
     }
 }
