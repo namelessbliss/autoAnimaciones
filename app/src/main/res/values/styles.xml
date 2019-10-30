@@ -6,14 +6,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
-        <!--PERMITIR TANSICIONES ENTRE ACTIVITIES-->
-        <item name="android:windowActivityTransitions">true</item>
-
-        <!--DEFINICION DE EFECTOS DE TRANSICION DE ENTRADA Y SALIDA-->
-        <item name="android:windowEnterTransition">@android:transition/explode</item>
-        <item name="android:windowExitAnimation">@android:transition/explode</item>
-        <item name="android:duration">2000</item>
     </style>
 
 </resources>
